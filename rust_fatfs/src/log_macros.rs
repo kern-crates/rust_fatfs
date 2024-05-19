@@ -51,7 +51,7 @@ macro_rules! log {
             log::log!(target: $target, lvl, $($arg)+);
         }
     });
-    ($lvl:expr, $($arg:tt)+) => (log!(target: log::__log_module_path!(), $lvl, $($arg)+))
+    ($lvl:expr, $($arg:tt)+) => (log!(target: "target", $lvl, $($arg)+))
 }
 
 #[macro_export]
